@@ -7,18 +7,19 @@ number = int(input("how many numbers"))
 letter = int(input("how many letters"))
 symbol = int(input("how many symbols"))
 
-password = ""
-total = number + letter + symbol
+password = []
 
-for cycle in range(1,total+1):
-    print(cycle+" debug")
-    
+for _ in range(number):
+    x = random.choice(numbers)
+    password.append(x)
 
-def addnumber():
-    return random.randint(0,number)
+for _ in range(letter):
+    x = random.choice(letters)
+    password.append(x)
+for _ in range(symbol):
+   x = random.choice(symbols)
+   password.append(x)
 
-def addsymbol():
-    return random.randint(0,symbol)
-
-def addletter():
-    return random.randint(0,letter)
+random.shuffle(password)
+password = "".join(password)
+print(password)
